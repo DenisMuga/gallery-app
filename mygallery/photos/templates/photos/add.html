@@ -16,6 +16,7 @@
                 <div class="card">
                     <form>
                         <form method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="form-group m-3">
                                 <label>Description</label>
                                 <input required name="description" type="text" placeholder="Enter a Description" class="form-control">
