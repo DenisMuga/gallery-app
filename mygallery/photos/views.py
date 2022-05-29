@@ -28,7 +28,9 @@ def addPhoto(request):
             category = None
             
         photo = Photo.objects.create(
-            category=category
+            category=category,
+            description = data['description'],
+            image = image,
         )
             
     
