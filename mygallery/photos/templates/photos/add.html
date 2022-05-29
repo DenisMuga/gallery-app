@@ -26,14 +26,16 @@
                                     <option value="none">...Select a Category...</option>
 
                                     {% for category in categories%}
-
                                     <option value='{{category.id}}'>{{category.name}}</option>
-
                                     {% endfor %}
-
-
                                 </select>
                               </div>
+
+                              <div class="form-group m-3">
+                                <label>Create a New Category</label>
+                                <input name ="category_new" type="text" placeholder="Enter a description" class="form-control">
+                              </div>
+
                             <div class="form-group m-3">
                               <label>Upload Image</label>
                               <input name ="image" type="file" class="form-control-file">
