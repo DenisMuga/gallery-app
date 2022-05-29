@@ -27,6 +27,10 @@ def addPhoto(request):
         else:
             category = None
             
+        photo = Photo.objects.create(
+            category=category
+        )
+            
     
     context = {'categories': categories}
     return render(request, 'photos/add.html', context)
