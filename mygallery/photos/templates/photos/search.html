@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
   <div class="container">
+    <a href="{% url 'gallery' %}" class="btn btn-info my-3 "> Go Back Home</a>
 
     <div class="row">
       {% if images%}
@@ -25,7 +27,7 @@
     <div class="card col-md-3 my-3 p-4 shadow m-3 " style="width: 18rem;">
       <img src="{{image.image.url}}" class="card-img-top" alt="..." style="width: 100%;aspect-ratio: 1;">
         <div class="card-footer ">
-          <h5 class="card-title text-success">{{image.name}}</h5>
+          <p class="card-title text-success">{{image.description}}</p>
           
          
         </div>
