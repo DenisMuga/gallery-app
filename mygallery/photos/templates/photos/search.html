@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="row">
+      {% if images%}
+        <p class="alert alert-success shadow mt-5 ">Found {{ images|length }} of searched term {{message}}</p>
+      {% else %}
+        <p class="alert alert-danger shadow mt-5"> Found 0 images for the search term {{message}} ...</p>
+      {% endif %}
+  
+    </div>
+  
+    <div class="row">
+  
+    {% if images %}
+    {%for image in images%}
+    <div class="card col-md-3 my-3 p-4 shadow m-3 " style="width: 18rem;">
+      <img src="{{image.image.url}}" class="card-img-top" alt="..." style="width: 100%;aspect-ratio: 1;">
+        <div class="card-footer ">
+          <h5 class="card-title text-success">{{image.name}}</h5>
+          
+         
+        </div>
+      </div>
+      {%endfor%}
+    {% endif %}
+    </div>
+  </div>
+</body>
+</html>

@@ -8,7 +8,7 @@
 
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     .image-thumbnail{
         height: 200px;
@@ -42,6 +42,17 @@
                     </li>
                       {% endfor %}
                     <a href="{% url 'add' %}" class="btn btn-block btn-info btn-sm m-1">Add Photo</a>
+                    <form class="navbar-form" role="search"  action="{% url 'search' %}" method="GET">
+                        {%csrf_token%}
+
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search by category e.g Football..." name="cat">
+                          <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                          </div>
+                        </div>
+                        
+                      </form>
                     </ul>
                   </div>
             
